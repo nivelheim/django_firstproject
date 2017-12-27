@@ -11,7 +11,7 @@ def upload(request):
 
 def page(request, page_id):
     entities = PhotoEntity.objects.order_by('-photo_date')
-    paginator = Paginator(entities, 8) # Show 25 contacts per page
+    paginator = Paginator(entities, 12) # Show 25 contacts per page
 
     pages = paginator.get_page(page_id)
     return render(request, 'gallery/photoentity_form.html', {'pages': pages})

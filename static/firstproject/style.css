@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Lato', sans-serif;
+    position: relative;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    background: black;
+}
+
+nav {
+    width: 95%;
+    max-width: 1280px;
+    margin: auto;
+    height: 101px;
+}
+
+nav ul {
+    font-size: 0.9em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: black;
+}
+
+nav li {
+    float: left;
+    margin-left: 15px;
+}
+
+nav li a {
+    display: block;
+    color: rgb(170, 170, 170);
+    text-decoration: none !important;
+    padding: 15px;
+}
+
+li a:hover {
+    background: rgb(255, 255, 255);
+    transition: 0.5s;
+    color: black;
+}
+
+#logo {
+    margin: 10px;
+    margin-left: 30px;
+}
+
+main {
+    position: static;
+    margin-bottom: -130px;
+    font-size: 0;
+}
+
+#push {
+    height: 130px;
+}
+
+footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:130px;
+
+    background: black;
+    color: white;
+}
+
+#footer-container {
+    margin: auto;
+    border-top: 1px rgb(170, 170, 170) solid;
+    color: rgb(170, 170, 170);
+    width: 95%;
+    max-width: 1200px;
+}
+
+#footer-container h3 {
+    font-size: 12px;
+    margin: 0;
+    font-weight: lighter;
+    text-align: right;
+}
+
+#sns-logo {
+    margin-right: 35px;
+    margin-bottom: 10px;
+}
+
+#sns-logo img {
+    width: 30px;
+    height: 30px;
+}
+
+#sns-logo a {
+    margin-top: 10px;
+    display: block;
+    color: rgb(170, 170, 170);
+}
+
+#sns-logo a:hover {
+    color: white;
+    text-decoration: initial;
+}
+
+
+@media only screen and (max-width: 480px) {
+    header {
+        width: 100%;
+        background: black;
+    }
+    
+    nav {
+        margin: auto;
+        height: auto;
+    }
+    
+    nav ul {
+        font-size: 0.9em;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background: rgb(0, 0, 0);
+        margin-left: -20px;
+    }
+    
+    nav li {
+        display: block;
+        width: 100%
+    }
+    
+    nav li a {
+        display: block;
+        color: rgb(170, 170, 170);
+        text-decoration: none !important;
+        padding: 5px;
+    }
+    
+    li a:hover {
+        background: rgb(255, 255, 255);
+        transition: 0.5s;
+        color: black;
+    }
+
+    #logo {
+        margin: 0px;
+    }
+}

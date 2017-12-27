@@ -1,0 +1,41 @@
+{% extends 'firstproject/base.html' %}
+
+{% block title %}
+    Biography
+{% endblock %}
+
+{% block content %}
+<div id="bio-container">
+    <div id="bio-block">
+        <div id="bio-content-one">
+            <div id="bio-header">
+                <h1>BIOGRAPHY</h1>
+            </div>
+            <div class="content-divider"></div>
+            <div class="bio-content-p">
+                {% if coverletter %}
+                    {{ coverletter.bio_content|safe }} 
+                {% else %}
+                    <p>No cover letter exists.</p>
+                {% endif %}
+            </div>
+            <div class="content-divider"></div>
+        </div>
+        <div id="bio-content-two">
+            {% if lists %}
+            {% for item in lists %}
+            <div class="bio-content-p">
+                {{ item.bio_content|safe }}
+            </div>
+            {% endfor %}
+            
+            {% else %}
+            <div class="bio-content-p">
+                <p>No lists exist.</p>
+            </div>
+            {% endif %}
+            <div class="content-divider"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

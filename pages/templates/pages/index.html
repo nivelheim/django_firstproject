@@ -1,0 +1,80 @@
+{% extends 'firstproject/base.html' %}
+{% load static %}
+
+{% block title %}
+    SWJ Photography
+{% endblock %}
+
+{% block content %}    
+  <div id="index-header" class="carousel slide" data-ride="carousel" data-interval="false">
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <div class="index-image-one">
+                  <div class="carousel-caption container">
+                    <h1>{{ headertone.main_content }}</h1>
+                    <p class="lead">{{ headercone.main_content }}</p>
+                  </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+            <div class="index-image-two">
+                    <div class="carousel-caption container">
+                      <h1>{{ headerttwo.main_content }}</h1>
+                      <p class="lead">{{ headercone.main_content }}</p>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#index-header" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#index-header" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <!--
+  <div id="index-header">
+    <div id="index-header-textblock">
+      <h1>Lorem Ipsum</h1>
+      <h3>Lorem Ipsum Testing Template Text</h3>
+    </div>
+  </div>
+  -->
+
+  <div id="index-recents">
+      <div id="index-recents-inner">
+        <h1>RECENT PHOTO UPLOADS</h1> 
+        <table>
+          <tr>
+            {% for img in images %}
+              <td><img src="{{ img.photo_file.url }}.250x250_q85_crop.jpg" target="_blank"/></td>
+            {% endfor %}
+          </tr>
+        </table>
+      </div>
+  </div>
+
+  <div id="index-contents">
+        <div id="index-about-inner">
+          <div class="index-about-divider">
+          </div>
+          <div id="index-about-image">
+          </div>
+          <div class="index-about-divider">
+          </div>
+          <div id="index-about-contents">
+            <h1>SUNG WOOK, JO</h1>
+            <h4>Gamer, photographer, wild-explorer, entomology-enthusiast.</h4>
+            <h4>"I consider every moment as a reminder of my life purposes."</h4>
+            <p>{{ contentp.main_content }}</p>
+          </div>
+          <div class="index-about-divider">
+          </div>
+        </div>
+  </div>
+{% endblock %}
+

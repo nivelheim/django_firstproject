@@ -1,0 +1,40 @@
+{% extends 'firstproject/base.html' %}
+
+{% block title %}
+    Contact
+{% endblock %}
+
+{% block content %}
+<div id="contact-container">
+    <div id="contact-block">
+        <div id="contact-content-one">
+            <div id="contact-header">
+                <h1>CONTACT</h1>
+            </div>
+            <div class="content-divider"></div>
+            <div class="contact-content-p">
+                <div class="contact-content-inner">
+                    <form role="form" action="" method="post" id="contactForm">
+                        {% csrf_token %}
+                        {{ form.as_ul }}
+                        <button type="submit" id="contactBtn" class="btn btn-outline-dark">Submit</button>
+                    </form>
+                </div>
+                <div class="contact-content-inner">
+                    <p>If you have any questions about me, my works, or business inquiries, feel free to send me an e-mail.
+                        I will happily answer them with as much information as I can provide.
+                    </p>
+                    <p>
+                        If you are interested in keeping touch with me personally, please follow one of my SNS accounts below.
+                    </p>
+                    <ul>
+                        <li><a href="https://www.facebook.com/profile.php?id=100002010878317" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/platycerus88/" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-divider"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

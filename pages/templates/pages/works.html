@@ -1,0 +1,31 @@
+{% extends 'firstproject/base.html' %}
+
+{% block title %}
+    Works
+{% endblock %}
+
+{% block content %}
+<div id="works-container">
+    <div id="works-block">
+        <div id="works-content-one">
+            <div id="works-header">
+                <h1>WORKS</h1>
+            </div>
+            <div class="content-divider"></div>
+                {% if works %}
+                {% for work in works %}
+                <div class="works-content-p">
+                    {{ work.work_content|safe }}
+                </div>
+                {% endfor %}
+                
+                {% else %}
+                <div class="works-content-p">
+                    <p>No works exist.</p>
+                </div>
+                {% endif %}
+            <div class="content-divider"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

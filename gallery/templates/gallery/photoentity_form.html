@@ -1,5 +1,5 @@
 {% extends 'firstproject/base.html' %}
-
+{% load static %}
 {% block title %}
     Gallery
 {% endblock %}
@@ -13,28 +13,29 @@
             </div>
             <div class="gallery-content-divider">
             </div>
-              {% if pages %}
+              {% if currentpage %}
               <div class="gallery-row">
-                {% for ent in pages %}
+                {% for ent in currentpage %}
                   <div class="gallery-cell">
                       <a href="{{ ent.photo_file.url }}" target="_blank">
                           <img class="mobile-img img-thumbnail" src="{{ ent.photo_file.url }}.250x250_q85_crop.jpg" alt="">
+                      </a>
                   </div>
-                <!--
-                <div class="col-xs-2 col-md-2 col-lg-2">
-                  <a href="{{ ent.photo_file.url }}" class="d-block mb-4 h-100" target="_blank">
-                    <img class="img-fluid img-thumbnail mobile-img" src="{{ ent.photo_file.url }}.250x250_q85_crop.jpg" alt="">
-                  </a>
-                </div>
-                -->
                 {% endfor %}
+                <!--
+                {% for i in paddinglist %}
+                  <div class="gallery-cell">
+                      <img class="mobile-img" src="{% static 'pages/images/padding.png' %}" alt="">
+                  </div>
+                {% endfor %}
+                -->
               </div>
 
               <div class="gallery-pagination">
                 <ul class="pagination">
                   <li class="page-item">
-                    {% if pages.has_previous %}
-                    <a class="page-link" href="/gallery/{{ pages.previous_page_number }}" aria-label="Previous">
+                    {% if currentpage.has_previous %}
+                    <a class="page-link" href="/gallery/{{ currentpage.previous_page_number }}" aria-label="Previous">
                       <span aria-hidden="true">&laquo;</span>
                       <span class="sr-only">Previous</span>
                     </a>
@@ -45,12 +46,12 @@
                     </a>  
                     {% endif %}
                   </li>
-                  {% for page in pages.paginator.page_range %}
-                  <li class="page-item"><a class="page-link" href="/gallery/{{ page }}">{{ page }}</a></li>
+                  {% for num in currentpage.paginator.page_range %}
+                  <li class="page-item"><a class="page-link" href="/gallery/{{ num }}">{{ num }}</a></li>
                   {% endfor %}
                   <li class="page-item">
-                    {% if pages.has_next %}  
-                    <a class="page-link" href="/gallery/{{ pages.next_page_number }}" aria-label="Next">
+                    {% if currentpage.has_next %}  
+                    <a class="page-link" href="/gallery/{{ currentpage.next_page_number }}" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
                       <span class="sr-only">Next</span>
                     </a>

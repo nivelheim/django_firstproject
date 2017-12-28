@@ -52,7 +52,7 @@ def indexView(request):
         headerctwo = MainEntity.objects.get(main_title='main_header_content2')
         contentp = MainEntity.objects.get(main_title='main_content_p')
     except MainEntity.DoesNotExist:
-         raise Http404("Some entries have invalid title name. Please check.")
+        raise Http404("Some entries have invalid title name. Please check.")
     context = {
         'images': photos,
         'headertone': headertone,

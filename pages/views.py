@@ -31,7 +31,7 @@ def contactView(request):
             title = form.cleaned_data['contact_title']
             content = form.cleaned_data['contact_content']
             try:
-                send_mail(title, content, email, ['Sung.Jo@hotmail.com'])
+                send_mail(title, content, email, ['jjung84@my.bcit.ca'])
                 data = {
                     'response': 'Email was sent.'
                 }
